@@ -34,7 +34,7 @@ function createExchange(writeData, onMessage, timeoutMs = 1000) {
     return writeData(txBytes).pipe(
       map((info) => {
         tryCount += 1
-        if (tryCount > 1) console.log(tryCount, info)
+        if (tryCount > 1) console.log('RETRY', tryCount, info)
         return {
           startTime,
           tryCount,
